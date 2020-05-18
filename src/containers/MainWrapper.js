@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { SudokuBoard } from '../components/SudokuBoard';
+import { Buttons } from '../components/Buttons';
 import colors from '../styles/colors';
 
 const Heading = styled.h1`
@@ -11,11 +12,20 @@ const Heading = styled.h1`
   text-transform: uppercase;
 `;
 
+const Main = styled.main`
+  display: grid;
+  grid-template-rows: auto auto auto;
+  justify-content: center;
+`;
+
 export const MainWrapper = () => {
   return (
-    <main>
+    <Main>
       <Heading>solve a sudoku</Heading>
       <SudokuBoard />
-    </main>
+      <Buttons />
+      {/* <button className="solved">Solve</button> */}
+      {/* <button className="reset">Reset</button> */}
+    </Main>
   )
 }
