@@ -12,9 +12,15 @@ const ButtonWrapper = styled.div`
       height: 60px;
       border: 2px solid ${colors.darkblue};
       color: ${colors.white};
+      font-size: 2rem;
       background-color: ${colors.green};
       margin-right: 2px;
       cursor: pointer;
+
+      &:hover {
+        background-color: ${colors.white};
+        color: ${colors.green};
+      }
     }
     
 `;

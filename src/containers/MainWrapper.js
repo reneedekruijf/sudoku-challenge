@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import { SudokuBoard } from '../components/SudokuBoard';
 import { Buttons } from '../components/Buttons';
+import { BigButtons } from '../components/BigButtons';
 import colors from '../styles/colors';
 
 const Heading = styled.h1`
@@ -14,7 +15,7 @@ const Heading = styled.h1`
 
 const Main = styled.main`
   display: grid;
-  grid-template-rows: auto auto auto;
+  grid-template-rows: auto auto auto auto;
   justify-content: center;
 `;
 
@@ -24,8 +25,7 @@ export const MainWrapper = () => {
       <Heading>solve a sudoku</Heading>
       <SudokuBoard />
       <Buttons />
-      {/* <button className="solved">Solve</button> */}
-      {/* <button className="reset">Reset</button> */}
+      <BigButtons />
     </Main>
   )
 }
