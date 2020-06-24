@@ -5,7 +5,6 @@ import colors from '../styles/colors';
 
 const ButtonWrapper = styled.div`
   display: grid;
-  /* grid-template-columns: auto auto auto auto auto; */
 
   button {
       margin-top: 2rem;
@@ -27,6 +26,10 @@ const ButtonWrapper = styled.div`
         color: ${colors.darkblue};
         border: 2px solid ${colors.green}
       }
+
+      &:active {
+        transform: translateY(2px);
+      }
     }
 
     .reset {
@@ -38,15 +41,20 @@ const ButtonWrapper = styled.div`
         color: ${colors.darkblue};
         border: 2px solid ${colors.red}
       }
+
+      &:active {
+        transform: translateY(2px);
+      }
     }
 `;
 
 
-export const BigButtons = () => {
+export const BigButtons = (props) => {
+  const { solve, reset } = props;
   return (
     <ButtonWrapper>
-      <button className="solved">Solve</button>
-      <button className="reset">Reset</button>
+      <button className="solved" onClick={solve}>Solve</button>
+      <button className="reset" onClick={reset}>Reset</button>
     </ButtonWrapper>
   )
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import colors from '../styles/colors';
@@ -12,7 +12,7 @@ const SudokuField = styled.input`
   border: 1px solid ${colors.mediumblue};
 
   &:focus {
-    border: 3px solid ${colors.darkblue}
+    /* border: 3px solid ${colors.darkblue} */
   }
 `;
 
@@ -34,17 +34,12 @@ const Square = styled.div`
 `;
 
 export const InputField = () => {
+  var arrayWithInputs = Array.apply(null, Array(10));
   return (
     <Square>
-      <SudokuField type="text" />
-      <SudokuField type="text" />
-      <SudokuField type="text" />
-      <SudokuField type="text" />
-      <SudokuField type="text" />
-      <SudokuField type="text" />
-      <SudokuField type="text" />
-      <SudokuField type="text" />
-      <SudokuField type="text" />
+      {arrayWithInputs.map((item, index) =>
+        index !== 0 ? <SudokuField name={index} type="text" /> : ''
+      )}
     </Square>
   )
 }
